@@ -61,6 +61,10 @@ textarea {
   text-align: center;
 }
 
+select {
+  text-align: center;
+}
+
 #settings {
   display: none;
   margin-top: 1rem;
