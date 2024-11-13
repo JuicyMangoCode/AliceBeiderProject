@@ -56,6 +56,8 @@ function addElement() {
     let elementChoice = document.getElementById('selectElement').value;
 
     if (elementChoice === '') {
+        alert('Please select an element type.');
+
         return
     }
 
