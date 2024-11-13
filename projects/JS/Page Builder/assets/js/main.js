@@ -129,3 +129,15 @@ function toggleSettings() {
         settingsElement.style.display = 'none';
     }
 }
+
+function toggleBackgroundColor() {
+    const bgColorInput = document.getElementById('inputBgColor');
+    const transparentBgCheckbox = document.getElementById('checkboxTransparentBg');
+
+    if (transparentBgCheckbox.checked) {
+        bgColorInput.disabled = true;
+        bgColorInput.value = '#000000'; // Reset to default color
+    } else {
+        bgColorInput.disabled = false;
+    }
+}
