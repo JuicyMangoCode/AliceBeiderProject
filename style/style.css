@@ -102,15 +102,15 @@ nav {
 }
 
 .scroll-down-link {
-    position: absolute;
+    position: relative;
+    top: 150px;
     z-index: 100;
     cursor: pointer;
     height: 60px;
     width: 80px;
-    margin: 0px 0 0 -40px;
+    margin: 0 auto;
     line-height: 60px;
-    left: 50%;
-    bottom: 10px;
+    display: block;
     color: #fff;
     text-align: center;
     font-size: 70px;
@@ -294,6 +294,25 @@ footer a:hover {
 }
 
 @media (max-width: 1208px) {
+    .hero-section > .container {
+        flex-direction: column;
+    }
+
+    .hero-text {
+        text-align: center;
+        min-width: 400px;
+    }
+
+    .scroll-down-arrow {
+        display: none;
+    }
+
+    #projects {
+        height: 100%;
+    }
+}
+
+@media (max-height: 700px) {
     .hero-section > .container {
         flex-direction: column;
     }
