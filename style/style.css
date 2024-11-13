@@ -326,6 +326,10 @@ footer a:hover {
         display: none;
     }
 
+    #about {
+        height: 100%;
+    }
+
     #projects {
         height: 100%;
     }
