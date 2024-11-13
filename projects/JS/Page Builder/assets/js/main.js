@@ -18,7 +18,15 @@ window.onload = function() {
     }
 
     if (localStorage.getItem('background')) {
-        document.getElementById('sideBar').style.backgroundImage = "url('./assets/img/" + localStorage.getItem('background') + "')";
+        const background = localStorage.getItem('background');
+        const sideBar = document.getElementById('sideBar');
+        sideBar.style.backgroundImage = "url('./assets/img/" + background + "')";
+        
+        // Set the background size based on the data-size attribute
+        const selectedOption = document.querySelector(`#selectBackground option[value="${background}"]`);
+        if (selectedOption) {
+            sideBar.style.backgroundSize = selectedOption.getAttribute('data-size');
+        }
     }
 }
 
@@ -107,6 +115,7 @@ function saveBoard() {
 function saveSettings() {
     let boolAutoSave = document.getElementById('checkboxAutoSave').checked
     let selectedBackground = document.getElementById('selectBackground').value;
+    let sideBar = document.getElementById('sideBar');
 
     if (boolAutoSave) {
         localStorage.setItem('autoSave', 'true');
@@ -116,7 +125,13 @@ function saveSettings() {
 
     if (selectedBackground !== '') {
         localStorage.setItem('background', selectedBackground);
-        document.getElementById('sideBar').style.backgroundImage = "url('./assets/img/" + selectedBackground + "')";
+        sideBar.style.backgroundImage = "url('./assets/img/" + selectedBackground + "')";
+        
+        // Set the background size based on the data-size attribute
+        const selectedOption = document.querySelector(`#selectBackground option[value="${selectedBackground}"]`);
+        if (selectedOption) {
+            sideBar.style.backgroundSize = selectedOption.getAttribute('data-size');
+        }
     }
 }
 
