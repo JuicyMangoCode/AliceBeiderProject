@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3a3a3a;
+    color: white;
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+}
+
+#curTurnMain {
+    display: none;
+    margin: 20px;
+}
+
+#mainContainer {
+    height: fit-content;
+    margin-top: 30px;
+
+    animation: entryOpacity 1s linear ;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(80px, 150px));
+    grid-template-rows: repeat(3, minmax(80px, 150px));
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    max-width: 90vw;
+    max-height: 90vh;
+
+    animation: entryOpacity 1s linear;
+}
+
+#winnerNotice {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: rgba(153, 124, 67, 0.598);
+    width: 100%;
+    height: 50%;
+}
+
+#winnerNotice > h1 {
+    font-family: Arial;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+#winnerNotice > input {
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    margin: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.cell {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffffad;
+    color: red;
+    border-radius: 10px;
+    font-size: 4rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    user-select: none;
+}
+
+.cell:hover {
+    background-color: #e0e0e0;
+}
+
+.cross::after {
+    content: "❌";
+}
+
+.circle::after {
+    content: "⭕";
+}
+
+@keyframes entryOpacity {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
